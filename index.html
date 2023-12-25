@@ -6,157 +6,220 @@
     <title>Categorila</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-}
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #112e00;
+        }
 
-header {
-    background-color: #333;
-    padding: 15px 0;
-}
+        header {
+            background-color: #b40101;
+            padding: 15px 0;
+            position: relative;
+            border-top: 3px solid #00ff00;
+            position: relative;
+            text-align: center;
+            color: #fff;
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-}
+        }
+        
 
-.logo a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: bold;
-}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-}
+        .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
 
-.nav-links li {
-    margin-right: 20px;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
 
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-}
+        .nav-links li {
+            margin-right: 20px;
+        }
 
-.nav-links a:hover {
-    color: #00bcd4;
-}
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
 
-.cards {
-    font-family: 'Arial', sans-serif;
-    margin: 20px; /* Adicionando margem para espaçamento da borda da tela */
-    display: flex;
-    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
-    justify-content: space-around;
-    background-color: #f4f4f4;
-}
+        .nav-links a:hover {
+            color: #00bcd4;
+        }
 
-.card {
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px; /* Espaçamento entre os cards ajustado */
-    transition: 0.5s;
-    flex: 1; /* Permite que os cards ocupem espaço igualmente */
-    max-width: 300px; /* Largura máxima para evitar que os cards fiquem muito largos */
-}
+        .snowflakes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
 
-.card:hover {
-    transform: scale(1.05);
-}
+        .snowflake {
+            position: absolute;
+            color: #fff;
+            font-size: 2em;
+            opacity: 0.8;
+            animation: fall linear infinite;
+            animation-duration: 10s;
+            animation-delay: 0s;
+        }
 
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-    border-bottom: 1px solid #ddd;
-}
+        .snowflake::before {
+            content: '❄';
+        }
 
-.card-content {
-    padding: 20px;
-}
+        .snowflake:nth-child(1) {
+            left: 5%;
+            animation-delay: 0.8s;
+        }
 
-.card h3 {
-    margin: 0;
-    color: #333;
-}
+        .snowflake:nth-child(2) {
+            left: 15%;
+            animation-delay: 2s;
+        }
 
-.card p {
-    color: #666;
-    margin-bottom: 10px;
-}
+        .snowflake:nth-child(3) {
+            left: 25%;
+            animation-delay: 4s;
+        }
 
-.card a {
-    display: inline-block;
-    padding: 10px;
-    background-color: #4caf50;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease-in-out;
-}
+        .snowflake:nth-child(4) {
+            left: 35%;
+            animation-delay: 6s;
+        }
 
-.card a:hover {
-    background-color: #45a049;
-}
+        .snowflake:nth-child(5) {
+            left: 45%;
+            animation-delay: 8s;
+        }
 
-.paragrafo {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 20px 0; /* Adicionando margem abaixo do parágrafo */
-}
+        .snowflake:nth-child(6) {
+            left: 55%;
+            animation-delay: 10s;
+        }
 
-.updates-container {
-        max-width: 600px;
-        margin: 20px auto;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background-color: #fff;
-    }
+        .snowflake:nth-child(7) {
+            left: 65%;
+            animation-delay: 12s;
+        }
 
-    .update {
-        margin-bottom: 20px;
-    }
+        .snowflake:nth-child(8) {
+            left: 75%;
+            animation-delay: 14s;
+        }
 
-    .update h2 {
-        color: #333;
-    }
+        .snowflake:nth-child(9) {
+            left: 85%;
+            animation-delay: 16s;
+        }
 
-    .date {
-        color: #666;
-        font-style: italic;
-    }
+        .snowflake:nth-child(10) {
+            left: 95%;
+            animation-delay: 18s;
+        }
 
-    ul {
-        list-style: none;
-        padding: 0;
-    }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
 
-    li {
-        margin-bottom: 10px;
-    }
+        .cards {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: #112e00;
+        }
 
-    .Imagem {
-        width: 35px;
-        margin-right: 7px;
-    }
+        .card {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px;
+            transition: 0.5s;
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .card a {
+            display: inline-block;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .card a:hover {
+            background-color: #45a049;
+        }
+
+        .logo {
+            margin-left: -55px;
+            margin-top: 30;
+        }
+
+        .h2 {
+            color: #fff;
+        }
+
+        .updates-container {
+            color: #fff;
+            font-family:Arial, Helvetica, sans-serif
+        }
     </style>
 </head>
 <body>
@@ -164,7 +227,8 @@ header {
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img class="Imagem" src="img/channels4_profile-removebg-preview_resized_batcheditor_fotor (1) (1).png"><a href="#">Categorila</a>
+                <img class="Imagem" src="img/channels4_profile-removebg-preview_resized_batcheditor_fotor (2)-fotor-bg-remover-20231224202256-fotor-bg-remover-20231224202859.png" alt="imagem" width="49" height="59">
+                <a href="#">Categorila</a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -174,7 +238,21 @@ header {
                 <li><a href="otimizacao.html">Otimizações</a></li>
             </ul>
         </nav>
+        <div class="snowflakes" aria-hidden="true">
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+        </div>
     </header>
+
+    <h2 class="h2">Site para baixar jogos</h2>
 
     <section class="cards">
         <div class="card-row">
@@ -219,29 +297,27 @@ header {
             </div>
         </div>
 
-               <!-- Adicione outra fila -->
-               <div class="card-row">
-                <div class="card">
-                    <img src="img/need-for-speed-underground-2-3840x2160-v0-aubav3w9ngm91.png" alt="Imagem do Card 5">
-                    <div class="card-content">
-                        <h3>Need For Speed Underground 2 remaster mod</h3>
-                        <p>Need For Speed Most Wanted, criado em 2005, jogo de corrida e perseguição policial.</p>
-                        <a href="nfsu.html">Baixar agora</a>
-                    </div>
-                </div>
-            
-                <div class="card">
-                    <!-- Conteúdo do quarto card -->
-                    <img src="img/46f8b7ef8318b4c2cc2fe8a826bebc74.jpg" alt="Imagem do Card 6">
-                    <div class="card-content">
-                        <h3>FPS Unlocker roblox</h3>
-                        <p>Programa que desbloqueia o limite de FPS do roblox!</p>
-                        <a href="roblox.html">Baixar agora</a>
-                    </div>
+        <!-- Adicione outra fila -->
+        <div class="card-row">
+            <div class="card">
+                <img src="img/need-for-speed-underground-2-3840x2160-v0-aubav3w9ngm91.png" alt="Imagem do Card 5">
+                <div class="card-content">
+                    <h3>Need For Speed Underground 2 remaster mod</h3>
+                    <p>Need For Speed Most Wanted, criado em 2005, jogo de corrida e perseguição policial.</p>
+                    <a href="nfsu.html">Baixar agora</a>
                 </div>
             </div>
         
-        
+            <div class="card">
+                <!-- Conteúdo do quarto card -->
+                <img src="img/46f8b7ef8318b4c2cc2fe8a826bebc74.jpg" alt="Imagem do Card 6">
+                <div class="card-content">
+                    <h3>FPS Unlocker roblox</h3>
+                    <p>Programa que desbloqueia o limite de FPS do roblox!</p>
+                    <a href="roblox.html">Baixar agora</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <div class="updates-container">
@@ -257,9 +333,9 @@ header {
     
         <div class="update">
             <h2>Atualização 2</h2>
-            <p class="date">Data:21 de dezembro 2023</p>
+            <p class="date">Data: 21 de dezembro 2023</p>
             <ul>
-                <li>Pagina de Otimização adicionada.</li>
+                <li>Página de Otimização adicionada.</li>
                 <li>Mais jogos adicionados.</li>
                 <li>Fundos especiais para alguns jogos.</li>
             </ul>
